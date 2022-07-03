@@ -20,7 +20,7 @@ from sendgrid.helpers.mail import Mail
 
 config = configparser.ConfigParser()
 config.read('config.ini')
-
+EMAIL_TO_GET_NOTOFICATION_ON = config['USVISA']['EMAIL_TO_GET_NOTOFICATION_ON']
 USERNAME = config['USVISA']['USERNAME']
 PASSWORD = config['USVISA']['PASSWORD']
 SCHEDULE_ID = config['USVISA']['SCHEDULE_ID']
@@ -58,8 +58,8 @@ def send_notification(msg):
 
     if SENDGRID_API_KEY:
         message = Mail(
-            from_email=USERNAME,
-            to_emails=USERNAME,
+            from_email=EMAIL_TO_GET_NOTOFICATION_ON,
+            to_emails=EMAIL_TO_GET_NOTOFICATION_ON,
             subject=msg,
             html_content=msg)
         try:
