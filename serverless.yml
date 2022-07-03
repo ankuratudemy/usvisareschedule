@@ -1,4 +1,4 @@
-service: docker-selenium-lambda
+service: us-visa-rescheduler
 
 provider:
   name: aws
@@ -9,7 +9,8 @@ provider:
       img:
         path: ./
         platform: linux/amd64
-
+plugins:
+  - serverless-offline
 functions:
   demo:
     timeout: 60
