@@ -17,3 +17,7 @@ functions:
     memorySize: 2048
     image:
       name: img
+    events:
+      - schedule:
+          rate: rate(10 minute)
+          enabled: true
