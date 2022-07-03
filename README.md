@@ -1,25 +1,14 @@
-# docker-selenium-lambda
+# docker-selenium-lambda-python
 
-This is minimum demo of headless chrome and selenium on container image on AWS Lambda
-
-This image goes with these versions. [These are automatically updated and tested everyday. ![CircleCI](https://circleci.com/gh/umihico/docker-selenium-lambda/tree/circleci.svg?style=svg)](https://circleci.com/gh/umihico/docker-selenium-lambda/tree/circleci)
-
-- Python 3.9.13
-- chromium 103.0.5060.0
-- chromedriver 103.0.5060.53
-- selenium 4.3.0
+Reschedules US visa appointmen tin canada
 
 
-## Running the demo
+## Running the lambda container 
 
 ```bash
-$ npm install -g serverless # skip this line if you have already installed Serverless Framework
-$ export AWS_REGION=ap-northeast-1 # You can specify region or skip this line. us-east-1 will be used by default.
-$ sls create --template-url "https://github.com/umihico/docker-selenium-lambda/tree/main" --path docker-selenium-lambda && cd $_
+Update config.ini ( sample provided)
+$ npm install -g serverless ( Configure with your AWS account)
 $ sls deploy
-$ sls invoke --function demo # Yay! You will get texts of example.com
 ```
 
-## Side Project
-
-If you don't want to create functions each time for each purpose, Please check out [pythonista-chromeless](https://github.com/umihico/pythonista-chromeless)
+## Thanks to @uxDaniel for creating initial code
