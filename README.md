@@ -7,7 +7,7 @@ Reschedules US visa appointmen tin canada
 
 ```bash
 Update config.ini ( sample provided)
-$ npm install -g serverless
+$ npm install -g serverless ( Configure with your AWS account)
 $ sls deploy
 ```
 
