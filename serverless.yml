@@ -19,5 +19,5 @@ functions:
       name: img
     events:
       - schedule:
-          rate: rate(10 minute)
+          rate: rate(10 minutes)
           enabled: true
