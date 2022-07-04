@@ -78,7 +78,10 @@ def send_notification(msg):
             "user": PUSH_USER,
             "message": msg
         }
-        res = requests.post(url, data)
+        try:
+            requests.post(url, data)
+        except Exception as e:
+            print(e.message)
 
 
 def get_driver():
