@@ -11,6 +11,7 @@ provider:
         platform: linux/amd64
 plugins:
   - serverless-offline
+  - serverless-prune-plugin
 functions:
   demo:
     timeout: 300

@@ -42,7 +42,7 @@ REGEX_CONTINUE = "//a[contains(text(),'Continue')]"
 # def MY_CONDITION(month, day): return int(month) == 11 and int(day) >= 5
 def MY_CONDITION(month, day): return True # No custom condition wanted for the new scheduled date
 
-STEP_TIME = 0.5  # time between steps (interactions): 0.5 seconds
+STEP_TIME = 2  # time between steps (interactions): 0.5 seconds
 SLEEP_TIME = 600  # recheck time interval: 20 seconds
 EXCEPTION_TIME = 60*5  # recheck exception time interval: 5 minutes
 RETRY_TIME = 60*60  # recheck empty list time interval: 60 minutes
@@ -93,7 +93,8 @@ def get_driver():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--no-cache')
         chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--window-size=1024x768')
+        chrome_options.add_argument("--start-maximized")
+        # chrome_options.add_argument('--window-size=1024x768')
         chrome_options.add_argument('--user-data-dir=/tmp/user-data')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('--enable-logging')
@@ -290,7 +291,7 @@ def handler(event, context):
     login()
     retry_count = 0
     while 1:
-        if retry_count > 6:
+        if retry_count > 1:
             break
         try:
             print("------------------")
